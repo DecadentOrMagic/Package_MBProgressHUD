@@ -103,19 +103,19 @@ UIView *hudAddedView;
 
 
 
-#pragma mark - 一直显示"加载中"等待圈圈
+#pragma mark - 一直显示小菊花加文字,有背景
 + (void)showLoading
 {
     [self showLoadingInView:nil];
 }
 
-#pragma mark - 一直显示自定义提示语,不带圈圈
+#pragma mark - 显示文字提示语,无背景,默认2秒钟后消失
 + (void)showBriefAlert:(NSString *)alert
 {
-    [self showPermanentMessage:alert inView:nil];
+    [self showBriefMessage:alert inView:nil];
 }
 
-#pragma mark - 显示简短的提示语,默认2秒钟
+#pragma mark - 一直显示文字提示语,有背景
 + (void)showPermanentAlert:(NSString *)alert
 {
     [self showPermanentMessage:alert inView:nil];
@@ -162,7 +162,7 @@ UIView *hudAddedView;
     return nil;
 }
 
-#pragma mark - 简单的提示语
+#pragma mark - 显示文字提示语到view上,无背景,默认2秒钟后消失
 + (void)showBriefMessage:(NSString *)message inView:(UIView *)view
 {
     // 这种效果就是很窄的那种一句话提示，默认2秒后自动消失，当然也是支持手势的
@@ -180,7 +180,7 @@ UIView *hudAddedView;
     [hudManager addGestureInView:view];
 }
 
-#pragma mark - 显示长久的提示语到view上(只要不用手触摸屏幕或者调用hideAlert方法就会一直显示)
+#pragma mark - 一直显示文字提示语到view上,有背景(只要不用手触摸屏幕或者调用hideAlert方法就会一直显示)
 + (void)showPermanentMessage:(NSString *)message inView:(UIView *)view
 {
     // 调用此方法产生的提示框会长时间的停留在界面，直到用手触摸屏幕或者调用hideAlert方法
@@ -204,7 +204,7 @@ UIView *hudAddedView;
     [hudManager addGestureInView:view];// 添加手势
 }
 
-#pragma mark - 网络加载提示用
+#pragma mark - 一直显示小菊花加文字到view上,有背景
 + (void)showLoadingInView:(UIView *)view
 {
     hudAddedView = view;

@@ -26,23 +26,25 @@ static CGFloat const kShowTime         = 2.0f;// 定义自动消失的提示语�
 
 
 /**
- *  一直显示"加载中"等待圈圈,若要修改直接修改 kLoadingMessage 的值即可
+ *  一直显示小菊花加文字,有背景
+ *  若要修改显示文字,直接修改 kLoadingMessage 的值即可
  */
 + (void)showLoading;
 
 /**
- *  一直显示自定义提示语,不带圈圈
- *
- *  @param alert 需要显示的提示信息
- */
-+ (void)showPermanentAlert:(NSString *)alert;
-
-/**
- *  显示简短的提示语,默认2秒钟,时间可直接修改kShowTime
+ *  显示文字提示语,无背景,默认2秒钟后消失
+ *  若要修改显示时间,可直接修改kShowTime
  *
  *  @param alert 需要显示的提示信息
  */
 + (void)showBriefAlert:(NSString *)alert;
+
+/**
+ *  一直显示文字提示语,有背景
+ *
+ *  @param alert 需要显示的提示信息
+ */
++ (void)showPermanentAlert:(NSString *)alert;
 
 /**
  *  隐藏alert
@@ -58,7 +60,7 @@ static CGFloat const kShowTime         = 2.0f;// 定义自动消失的提示语�
  */
 
 /**
- *  显示简短提示语到view上
+ *   显示文字提示语到view上,无背景,默认2秒钟后消失
  *
  *  @param message 需要显示的提示信息
  *  @param view    要添加到的view
@@ -66,7 +68,7 @@ static CGFloat const kShowTime         = 2.0f;// 定义自动消失的提示语�
 + (void)showBriefMessage:(NSString *)message inView:(UIView *)view;
 
 /**
- *  显示长久的提示语到view上(只要不用手触摸屏幕或者调用hideAlert方法就会一直显示)
+ *  一直显示文字提示语到view上,有背景(只要不用手触摸屏幕或者调用hideAlert方法就会一直显示)
  *
  *  @param message 需要显示的提示信息
  *  @param view    要添加到的view
@@ -74,7 +76,7 @@ static CGFloat const kShowTime         = 2.0f;// 定义自动消失的提示语�
 + (void)showPermanentMessage:(NSString *)message inView:(UIView *)view;
 
 /**
- *  显示网络加载到view上
+ *  一直显示小菊花加文字到view上,有背景
  *
  *  @param view 要添加到的view
  */

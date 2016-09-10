@@ -27,8 +27,6 @@
      *         2、一句代码搞定提示信息
      *         3、只要轻触屏幕或者调用[XYMBManager hideAlert]，提示信息就会消失
      */
-    
-    [XYMBManager showAlertWithCustomImage:@"AI_200*200" title:@"等一等" inView:self.view];
 }
 
 
@@ -51,11 +49,29 @@
     [XYMBManager showLoading];
 #else
     [XYMBManager hideAlert];
-    [MBManager showBriefAlert:@"hello"];
+    [XYMBManager showBriefAlert:@"hello"];
 #endif
 }
 
 
+- (IBAction)test:(id)sender {
+    // 一直显示小菊花加文字,有背景
+//    [XYMBManager showLoading];
+    
+    // 显示文字提示语,无背景,默认2秒钟后消失
+//    [XYMBManager showBriefAlert:@"啦啦啦"];
+    
+    // 一直显示文字提示语,有背景
+//    [XYMBManager showPermanentAlert:@"啦啦啦啦啦"];
+    
+//    [XYMBManager showBriefMessage:@"哈哈哈" inView:self.view];
+    
+//    [XYMBManager showPermanentMessage:@"哈哈哈哈哈" inView:self.view];
+    
+//    [XYMBManager showLoadingInView:self.view];
+    
+    [XYMBManager showAlertWithCustomImage:@"AI_200*200" title:@"默认" inView:self.view];
+}
 
 
 
